@@ -1,4 +1,4 @@
-Wikipedia RAG (Local LLM + Streamlit)
+# Wikipedia RAG (Local LLM + Streamlit)
 
 A simple Retrieval-Augmented Generation (RAG) application built with:
 
@@ -14,7 +14,7 @@ A simple Retrieval-Augmented Generation (RAG) application built with:
 
 This app allows you to ask questions about AI / Machine Learning topics, and it answers using Wikipedia content with a local LLM.
 
-🚀 Features
+## 🚀 Features
 
 ✅ Fully Local LLM (No OpenAI API required)
 
@@ -28,7 +28,7 @@ This app allows you to ask questions about AI / Machine Learning topics, and it 
 
 ✅ CPU compatible (slower but works)
 
-📚 Topics Included
+## 📚 Topics Included
 
 The RAG index is built from the following Wikipedia pages:
 
@@ -42,50 +42,59 @@ Convolutional neural network
 
 Long short-term memory
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
+
+```
 Component	Tool Used
 Framework	Streamlit
 RAG Engine	LlamaIndex
 Embeddings	sentence-transformers/all-MiniLM-L6-v2
 LLM	Qwen/Qwen2.5-0.5B-Instruct
 Data Source	Wikipedia
-📦 Installation
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/wiki-rag.git
-cd wiki-rag
+```
+## 📦 Installation
 
+1️⃣ Clone the Repository
+```
+git clone https://github.com/RDharanish24/wikipedia-rag.git
+cd wikipedia-rag
+```
 2️⃣ Create Virtual Environment (Recommended)
+```
 python -m venv venv
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
-
+```
 3️⃣ Install Requirements
+```
 pip install -r requirements.txt
 
-
+```
 If you don't have a requirements.txt, install manually:
-
+```
 pip install streamlit torch llama-index llama-index-embeddings-huggingface \
 llama-index-llms-huggingface llama-index-readers-wikipedia \
 sentence-transformers transformers
-
+```
 ▶️ Run the App
+```
 streamlit run app.py
-
+```
 
 Then open:
 
 http://localhost:8501
 
 📁 Project Structure
-wiki-rag/
+```
+wikipedia-rag/
 │
 ├── app.py
 ├── wiki_rag/          # Persisted vector index
 ├── README.md
 └── requirements.txt
-
-⚙️ How It Works
+```
+### ⚙️ How It Works
 
 Wikipedia pages are loaded using WikipediaReader
 
@@ -103,7 +112,7 @@ Qwen LLM generates answer from context
 
 Retrieved context is displayed in UI
 
-🧠 Model Details
+### 🧠 Model Details
 Embedding Model
 
 sentence-transformers/all-MiniLM-L6-v2
@@ -122,7 +131,7 @@ Decoder-only model
 
 Runs locally with torch
 
-🖥️ Hardware Requirements
+### 🖥️ Hardware Requirements
 
 Minimum:
 
@@ -136,7 +145,7 @@ Recommended:
 
 GPU (for faster generation)
 
-⚠️ Notes
+### ⚠️ Notes
 
 First run will take time (downloads model + builds index)
 
@@ -146,7 +155,7 @@ Index is stored locally in ./wiki_rag
 
 Delete the folder if you want to rebuild the index
 
-🧩 Future Improvements
+### 🧩 Future Improvements
 
 Add PDF upload support
 
